@@ -4,11 +4,32 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>Turno Display</title>
   </head>
   <body>
-    <div id="app">
-      <h1>TypeScript Sandbox</h1>
+    <div class="turn__display flow">
+      <div class="flex">
+        <button id="reset" class="btn--terciary">Reset</button>
+        <label for="change-number"
+          >Cambia el número:
+          <input
+            type="number"
+            name=""
+            id="turn-change"
+            min="1"
+            max="99"
+            value="1"
+          />
+        </label>
+      </div>
+      <h1 id="turn" class="turn__number">01</h1>
+      <p class="turn__text">Por favor, acérquese al mostrador</p>
+      <div class="flex">
+        <button id="prev" class="btn--secondary" disabled="true">
+          Anterior
+        </button>
+        <button id="next">Siguente</button>
+      </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
   </body>

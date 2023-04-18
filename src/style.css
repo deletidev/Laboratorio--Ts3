@@ -27,6 +27,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
@@ -92,6 +93,54 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #358551;
+    color: white;
   }
+  button:disabled {
+    background-color: #b6b6b6;
+    color: #213547;
+  }
+  .btn--secondary {
+    background-color: #c2e4ce;
+    color: #213547;
+  }
+  .btn--terciary {
+    background-color: #f78176;
+    color: #1a1a1a;
+  }
+}
+.turn__display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.turn__number {
+  font-size: 6rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.turn__text {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+.flex {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flow > * + * {
+  padding-top: 2rem;
 }
