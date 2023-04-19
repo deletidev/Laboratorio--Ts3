@@ -7,19 +7,24 @@
     <title>Turno Display</title>
   </head>
   <body>
-    <div class="turn__display flow">
-      <div class="flex">
-        <button id="reset" class="btn--terciary">Reset</button>
-        <label for="change-number"
-          >Cambia el número:
-          <input type="number" name="" id="turn-change" />
-        </label>
+    <div class="app">
+      <div class="turn__display flow">
+        <div class="flex">
+          <button id="reset" class="btn--terciary">Reset</button>
+        </div>
+        <h1 id="turn" class="turn__number">01</h1>
+        <p class="turn__text">Por favor, acérquese al mostrador</p>
+        <div class="flex">
+          <button id="prev" class="btn--secondary">Anterior</button>
+          <button id="next">Siguente</button>
+        </div>
       </div>
-      <h1 id="turn" class="turn__number">01</h1>
-      <p class="turn__text">Por favor, acérquese al mostrador</p>
-      <div class="flex">
-        <button id="prev" class="btn--secondary">Anterior</button>
-        <button id="next">Siguente</button>
+      <div class="change">
+        <label for="change-value"
+          >Cambia el número:
+          <input type="text" name="" id="change-value" />
+        </label>
+        <button id="change-turn" class="btn--secondary">Cambiar</button>
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>

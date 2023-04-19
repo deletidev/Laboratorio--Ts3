@@ -3,7 +3,8 @@ import './style.css';
 const reset = document.getElementById('reset');
 const next = document.getElementById('next');
 const prev = document.getElementById('prev');
-const changeTurn = document.getElementById('turn-change');
+const changeTurn = document.getElementById('change-turn');
+const turnValue = document.getElementById('change-value');
 const turn = document.getElementById('turn');
 let count = 0;
 
@@ -26,17 +27,20 @@ const nextTurn = (): void => {
 };
 
 const resetTurn = (): void => {
-  if (turn && changeTurn instanceof HTMLInputElement) {
+  if (turn) {
     turn.textContent = '01';
-    changeTurn.value = '';
     count = 1;
   }
 };
 
 const changeValue = (): void => {
-  if (turn && changeTurn instanceof HTMLInputElement) {
-    count = parseInt(changeTurn.value);
-    turn.textContent = count.toString().padStart(2, '0');
+  if (turn && turnValue instanceof HTMLInputElement) {
+    count = parseInt(turnValue.value);
+    //para evitar que el valor introducido no sea vacio o letras
+    if (!Number.isNaN(count)) {
+      turn.textContent = count.toString().padStart(2, '0');
+      turnValue.value = '';
+    }
   }
 };
 
@@ -52,5 +56,5 @@ if (reset) {
   reset.addEventListener('click', resetTurn);
 }
 if (changeTurn) {
-  changeTurn.addEventListener('change', changeValue);
+  changeTurn.addEventListener('click', changeValue);
 }

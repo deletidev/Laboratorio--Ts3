@@ -37,10 +37,9 @@ h1 {
   line-height: 1.1;
 }
 
-#app {
+.app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
 }
 
@@ -94,6 +93,7 @@ button:focus-visible {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.277);
+  margin-bottom: 2rem;
 }
 
 .turn__number {
