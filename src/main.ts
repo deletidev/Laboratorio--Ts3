@@ -80,7 +80,7 @@ if (
       desactivateBtn(next);
     }
   };
-
+  console.log('aqui');
   next.addEventListener('click', nextFc);
   prev.addEventListener('click', prevFc);
   reset.addEventListener('click', resetFc);
