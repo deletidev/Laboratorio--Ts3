@@ -1,7 +1,7 @@
 # Laboratorio-- Ts3
 
 Queremos implementar una pantalla en la que aparezca un display con el turno actual de una clínica y un botón para pasar al siguiente turno y otro para volver al anterior.
-Como challenge, añadimos una caja de texto y un botón que permita cambiar el turno a un valor que ponga el operario
+Como challenge, añadimos una caja de texto y un botón que permita cambiar el turno a un valor que ponga el operario.
 
 Pasos para ver el proyecto:
 

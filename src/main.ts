@@ -11,21 +11,21 @@ if (turn && turn.textContent) {
   count = parseInt(turn.textContent);
 }
 
-const prevFc = (): void => {
+const prevTurn = (): void => {
   if (turn) {
     count--;
     turn.textContent = count.toString().padStart(2, '0');
   }
 };
 
-const nextFc = (): void => {
+const nextTurn = (): void => {
   if (turn) {
     count++;
     turn.textContent = count.toString().padStart(2, '0');
   }
 };
 
-const resetFc = (): void => {
+const resetTurn = (): void => {
   if (turn && changeTurn instanceof HTMLInputElement) {
     turn.textContent = '01';
     changeTurn.value = '';
@@ -33,24 +33,24 @@ const resetFc = (): void => {
   }
 };
 
-const changeFc = (): void => {
+const changeValue = (): void => {
   if (turn && changeTurn instanceof HTMLInputElement) {
     count = parseInt(changeTurn.value);
-    turn.textContent = count.toString();
+    turn.textContent = count.toString().padStart(2, '0');
   }
 };
 
 if (next) {
-  next.addEventListener('click', nextFc);
+  next.addEventListener('click', nextTurn);
 }
 
 if (prev) {
-  prev.addEventListener('click', prevFc);
+  prev.addEventListener('click', prevTurn);
 }
 
 if (reset) {
-  reset.addEventListener('click', resetFc);
+  reset.addEventListener('click', resetTurn);
 }
 if (changeTurn) {
-  changeTurn.addEventListener('change', changeFc);
+  changeTurn.addEventListener('change', changeValue);
 }
