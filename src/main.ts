@@ -5,7 +5,7 @@ const next = document.getElementById('next');
 const prev = document.getElementById('prev');
 const changeTurn = document.getElementById('turn-change');
 const turn = document.getElementById('turn');
-let count: number;
+let count = 0;
 
 if (turn && turn.textContent) {
   count = parseInt(turn.textContent);
