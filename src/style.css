@@ -13,7 +13,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-
+* {
+  box-sizing: border-box;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -38,9 +40,39 @@ h1 {
 }
 
 .app {
+  width: 90%;
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+@media screen and (min-width: 600px) {
+  .app {
+    flex-direction: row-reverse;
+    justify-content: center;
+  }
+}
+.change {
+  width: 100%;
+  text-align: center;
+  background-color: #242424;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.277);
+}
+.change input {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+@media screen and (min-width: 600px) {
+  .change {
+    text-align: left;
+    width: 12rem;
+  }
 }
 
 .logo {
@@ -93,7 +125,6 @@ button:focus-visible {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.277);
-  margin-bottom: 2rem;
 }
 
 .turn__number {
@@ -152,7 +183,8 @@ button:focus-visible {
     background-color: #f78176;
     color: #1a1a1a;
   }
-  .turn__display {
+  .turn__display,
+  .change {
     background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
