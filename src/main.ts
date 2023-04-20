@@ -6,7 +6,7 @@ const prev = document.getElementById('prev');
 const changeTurn = document.getElementById('change-turn');
 const turnValue = document.getElementById('change-value');
 const turn = document.getElementById('turn');
-let count = 0;
+let count: number = 0;
 
 if (turn && turn.textContent) {
   count = parseInt(turn.textContent);
@@ -55,6 +55,5 @@ if (prev) {
 if (reset) {
   reset.addEventListener('click', resetTurn);
 }
-if (changeTurn) {
-  changeTurn.addEventListener('click', changeValue);
-}
+//Version cortocircuitando
+changeTurn?.addEventListener('click', changeValue);
