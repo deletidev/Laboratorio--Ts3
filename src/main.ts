@@ -15,14 +15,14 @@ if (turn && turn.textContent) {
 const prevTurn = (): void => {
   if (turn) {
     count--;
-    turn.textContent = count.toString().padStart(2, '0');
+    turn.textContent = `${count}`.padStart(2, '0');
   }
 };
 
 const nextTurn = (): void => {
   if (turn) {
     count++;
-    turn.textContent = count.toString().padStart(2, '0');
+    turn.textContent = `${count}`.padStart(2, '0');
   }
 };
 
@@ -35,25 +35,33 @@ const resetTurn = (): void => {
 
 const changeValue = (): void => {
   if (turn && turnValue instanceof HTMLInputElement) {
-    count = parseInt(turnValue.value);
     //para evitar que el valor introducido no sea vacio o letras
+    count = parseInt(turnValue.value);
+
     if (!Number.isNaN(count)) {
-      turn.textContent = count.toString().padStart(2, '0');
+      turn.textContent = `${count}`.padStart(2, '0');
       turnValue.value = '';
     }
   }
 };
 
-if (next) {
+if (next && next instanceof HTMLButtonElement) {
   next.addEventListener('click', nextTurn);
 }
 
-if (prev) {
+if (prev && prev instanceof HTMLButtonElement) {
   prev.addEventListener('click', prevTurn);
 }
 
-if (reset) {
+if (reset && reset instanceof HTMLButtonElement) {
   reset.addEventListener('click', resetTurn);
 }
-//Version cortocircuitando
-changeTurn?.addEventListener('click', changeValue);
+
+if (changeTurn && changeTurn instanceof HTMLButtonElement) {
+  changeTurn.addEventListener('click', changeValue);
+}
+
+/*
+Correcciones asegurarme de que es un btn es necesario para prevenir errores
+count.toString().padStart(2, '0') === `${count}`.padStart(2, '0') pero el segundo es mas legible y cortito
+*/
