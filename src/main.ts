@@ -6,28 +6,24 @@ const prev = document.getElementById('prev');
 const changeTurn = document.getElementById('change-turn');
 const turnValue = document.getElementById('change-value');
 const turn = document.getElementById('turn');
-let count: number = 0;
-
-if (turn && turn.textContent) {
-  count = parseInt(turn.textContent);
-}
+let count: number = 1;
 
 const prevTurn = (): void => {
-  if (turn) {
+  if (turn && turn instanceof HTMLElement) {
     count--;
     turn.textContent = `${count}`.padStart(2, '0');
   }
 };
 
 const nextTurn = (): void => {
-  if (turn) {
+  if (turn && turn instanceof HTMLElement) {
     count++;
     turn.textContent = `${count}`.padStart(2, '0');
   }
 };
 
 const resetTurn = (): void => {
-  if (turn) {
+  if (turn && turn instanceof HTMLElement) {
     turn.textContent = '01';
     count = 1;
   }
